@@ -187,6 +187,7 @@ var KNOBS_TO_CONTROL = {
 
 // -------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------
+// SHIFT FUNCTIONALITY - NOT IN USE
 // -------------------------------------------------------------------------------
 
 ApcKey25.isShiftPress = false;
@@ -208,16 +209,29 @@ ApcKey25.Play = function (channel, control, value, status, group) {
 };
 
 var syncPlayOutputCallback = function (value, group, control) {
-    var parameter = engine.getParameter("[Channel1]", "play");
+    // --------------------------------------------------------
+
+    var parameter1 = engine.getParameter("[Channel1]", "play");
 
     midi.sendShortMsg(
         MIDI_VALUES.note_on,
-        PAD_MATRIX.scene_5[2],
-        parameter === 1 ? LED_COLOR.blinkGreen : LED_COLOR.off
+        PAD_MATRIX.scene_5[3],
+        parameter1 === 1 ? LED_COLOR.blinkGreen : LED_COLOR.off
+    );
+
+    // --------------------------------------------------------
+
+    var parameter2 = engine.getParameter("[Channel2]", "play");
+
+    midi.sendShortMsg(
+        MIDI_VALUES.note_on,
+        PAD_MATRIX.scene_5[7],
+        parameter2 === 1 ? LED_COLOR.blinkGreen : LED_COLOR.off
     );
 };
 
 engine.makeConnection("[Channel1]", "play", syncPlayOutputCallback);
+engine.makeConnection("[Channel2]", "play", syncPlayOutputCallback);
 
 // -------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------
@@ -225,7 +239,7 @@ engine.makeConnection("[Channel1]", "play", syncPlayOutputCallback);
 
 ApcKey25.activeDeckObj = {
     name: "Deck1",
-    control: "enabled",
+    control: "headSplit",
     group: "[Master]",
 };
 
@@ -254,13 +268,13 @@ var syncActiveDeckOutputCallback = function (value, group, control) {
 
     midi.sendShortMsg(
         MIDI_VALUES.note_on,
-        PAD_MATRIX.scene_5[3],
+        PAD_MATRIX.scene_5[1],
         parameter === 1 ? LED_COLOR.off : LED_COLOR.red
     );
 
     midi.sendShortMsg(
         MIDI_VALUES.note_on,
-        PAD_MATRIX.scene_5[7],
+        PAD_MATRIX.scene_5[5],
         parameter === 1 ? LED_COLOR.red : LED_COLOR.off
     );
 };

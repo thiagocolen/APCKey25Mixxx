@@ -5,67 +5,92 @@
     </info>
     <controller id="apckey25">
         <scriptfiles>
-            <file filename="apckey25-componentjs-script.js" functionprefix="ApcKey25"/>
+            <file filename="apckey25-componentjs-script.js" functionprefix="ApcKey25" />
         </scriptfiles>
         <controls>
+
+
+            <!-- /////////////////////////// -->
+            <!-- /// A , LOAD, PLAY, SYNC //// -->
+
+            <control>
+                <group></group>
+                <key>ApcKey25.changeActiveDeck</key>
+                <status>0x90</status>
+                <midino>0x00</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+
             <control>
                 <group>[Channel1]</group>
                 <key>LoadSelectedTrack</key>
                 <description>MIDI Learned from 2 messages.</description>
                 <status>0x90</status>
-                <midino>0x00</midino>
+                <midino>0x01</midino>
                 <options>
-                    <normal/>
+                    <normal />
                 </options>
             </control>
+
             <control>
                 <group>[Channel1]</group>
                 <key>ApcKey25.Play</key>
                 <description>MIDI Learned from 2 messages.</description>
                 <status>0x90</status>
-                <midino>0x01</midino>
+                <midino>0x02</midino>
                 <options>
-                    <script-binding/>
+                    <script-binding />
                 </options>
             </control>
+
+            <control>
+                <group>[Channel1]</group>
+                <key>sync_enabled</key>
+                <description>MIDI Learned from 2 messages.</description>
+                <status>0x90</status>
+                <midino>0x03</midino>
+                <options>
+                    <normal />
+                </options>
+            </control>
+
+            <!-- /////////////////////////// -->
+            <!-- /// b , LOAD, PLAY, SYNC //// -->
+
             <control>
                 <group></group>
                 <key>ApcKey25.changeActiveDeck</key>
                 <status>0x90</status>
-                <midino>0x02</midino>
+                <midino>0x04</midino>
                 <options>
-                    <script-binding/>
+                    <script-binding />
                 </options>
             </control>
+
             <control>
                 <group>[Channel2]</group>
                 <key>LoadSelectedTrack</key>
                 <description>MIDI Learned from 2 messages.</description>
                 <status>0x90</status>
-                <midino>0x04</midino>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <group>[Channel2]</group>
-                <key>play</key>
-                <description>MIDI Learned from 2 messages.</description>
-                <status>0x90</status>
                 <midino>0x05</midino>
                 <options>
-                    <normal/>
+                    <normal />
                 </options>
             </control>
+
             <control>
-                <group></group>
-                <key>ApcKey25.changeActiveDeck</key>
+                <group>[Channel2]</group>
+                <key>ApcKey25.Play</key>
+                <description>MIDI Learned from 2 messages.</description>
                 <status>0x90</status>
                 <midino>0x06</midino>
                 <options>
-                    <script-binding/>
+                    <script-binding />
                 </options>
             </control>
+
             <control>
                 <group>[Channel2]</group>
                 <key>sync_enabled</key>
@@ -73,9 +98,13 @@
                 <status>0x90</status>
                 <midino>0x07</midino>
                 <options>
-                    <normal/>
+                    <normal />
                 </options>
             </control>
+
+
+            <!-- /////////////////////////// -->
+
             <control>
                 <group>[Channel1]</group>
                 <key>loop_double</key>
@@ -83,7 +112,7 @@
                 <status>0x90</status>
                 <midino>0x1A</midino>
                 <options>
-                    <normal/>
+                    <normal />
                 </options>
             </control>
             <control>
@@ -93,7 +122,7 @@
                 <status>0x90</status>
                 <midino>0x1B</midino>
                 <options>
-                    <normal/>
+                    <normal />
                 </options>
             </control>
             <control>
@@ -103,7 +132,7 @@
                 <status>0x90</status>
                 <midino>0x1E</midino>
                 <options>
-                    <normal/>
+                    <normal />
                 </options>
             </control>
             <control>
@@ -113,7 +142,7 @@
                 <status>0x90</status>
                 <midino>0x1F</midino>
                 <options>
-                    <normal/>
+                    <normal />
                 </options>
             </control>
             <control>
@@ -123,7 +152,7 @@
                 <status>0x90</status>
                 <midino>0x20</midino>
                 <options>
-                    <normal/>
+                    <normal />
                 </options>
             </control>
             <control>
@@ -133,7 +162,7 @@
                 <status>0x90</status>
                 <midino>0x21</midino>
                 <options>
-                    <normal/>
+                    <normal />
                 </options>
             </control>
             <control>
@@ -143,7 +172,7 @@
                 <status>0x90</status>
                 <midino>0x22</midino>
                 <options>
-                    <normal/>
+                    <normal />
                 </options>
             </control>
             <control>
@@ -153,7 +182,7 @@
                 <status>0x90</status>
                 <midino>0x23</midino>
                 <options>
-                    <normal/>
+                    <normal />
                 </options>
             </control>
             <control>
@@ -163,7 +192,7 @@
                 <status>0x90</status>
                 <midino>0x24</midino>
                 <options>
-                    <normal/>
+                    <normal />
                 </options>
             </control>
             <control>
@@ -173,7 +202,7 @@
                 <status>0x90</status>
                 <midino>0x25</midino>
                 <options>
-                    <normal/>
+                    <normal />
                 </options>
             </control>
             <control>
@@ -183,7 +212,7 @@
                 <status>0x90</status>
                 <midino>0x26</midino>
                 <options>
-                    <normal/>
+                    <normal />
                 </options>
             </control>
             <control>
@@ -193,12 +222,13 @@
                 <status>0x90</status>
                 <midino>0x27</midino>
                 <options>
-                    <normal/>
+                    <normal />
                 </options>
             </control>
 
 
-
+            <!-- /////////////////////////// -->
+            <!-- /// 8 KNOBS - VOL, EQ, FILTER, EFFECTS //// -->
 
             <control>
                 <group>[Knobs]</group>
@@ -206,7 +236,7 @@
                 <status>0xB0</status>
                 <midino>0x30</midino>
                 <options>
-                    <script-binding/>
+                    <script-binding />
                 </options>
             </control>
             <control>
@@ -215,7 +245,7 @@
                 <status>0xB0</status>
                 <midino>0x31</midino>
                 <options>
-                    <script-binding/>
+                    <script-binding />
                 </options>
             </control>
             <control>
@@ -224,7 +254,7 @@
                 <status>0xB0</status>
                 <midino>0x32</midino>
                 <options>
-                    <script-binding/>
+                    <script-binding />
                 </options>
             </control>
             <control>
@@ -233,7 +263,7 @@
                 <status>0xB0</status>
                 <midino>0x33</midino>
                 <options>
-                    <script-binding/>
+                    <script-binding />
                 </options>
             </control>
             <control>
@@ -242,7 +272,7 @@
                 <status>0xB0</status>
                 <midino>0x34</midino>
                 <options>
-                    <script-binding/>
+                    <script-binding />
                 </options>
             </control>
             <control>
@@ -251,7 +281,7 @@
                 <status>0xB0</status>
                 <midino>0x35</midino>
                 <options>
-                    <script-binding/>
+                    <script-binding />
                 </options>
             </control>
             <control>
@@ -260,7 +290,7 @@
                 <status>0xB0</status>
                 <midino>0x36</midino>
                 <options>
-                    <script-binding/>
+                    <script-binding />
                 </options>
             </control>
             <control>
@@ -269,14 +299,12 @@
                 <status>0xB0</status>
                 <midino>0x37</midino>
                 <options>
-                    <script-binding/>
+                    <script-binding />
                 </options>
             </control>
 
-
-
-
-
+            <!-- /////////////////////////// -->
+            <!-- ///// LIBRARY ////// -->
 
             <control>
                 <group>[Library]</group>
@@ -285,7 +313,7 @@
                 <status>0x90</status>
                 <midino>0x40</midino>
                 <options>
-                    <normal/>
+                    <normal />
                 </options>
             </control>
             <control>
@@ -295,7 +323,7 @@
                 <status>0x90</status>
                 <midino>0x41</midino>
                 <options>
-                    <normal/>
+                    <normal />
                 </options>
             </control>
             <control>
@@ -305,7 +333,7 @@
                 <status>0x90</status>
                 <midino>0x42</midino>
                 <options>
-                    <normal/>
+                    <normal />
                 </options>
             </control>
             <control>
@@ -315,7 +343,7 @@
                 <status>0x90</status>
                 <midino>0x43</midino>
                 <options>
-                    <normal/>
+                    <normal />
                 </options>
             </control>
             <control>
@@ -325,7 +353,7 @@
                 <status>0x90</status>
                 <midino>0x44</midino>
                 <options>
-                    <normal/>
+                    <normal />
                 </options>
             </control>
             <control>
@@ -335,16 +363,21 @@
                 <status>0x91</status>
                 <midino>0x48</midino>
                 <options>
-                    <normal/>
+                    <normal />
                 </options>
             </control>
+
+
+            <!-- /////////////////////////// -->
+            <!-- ///// SHIFT  ////// -->
+
             <control>
                 <group>[Channel1]</group>
                 <key>ApcKey25.Shift</key>
                 <status>0x80</status>
                 <midino>0x62</midino>
                 <options>
-                    <script-binding/>
+                    <script-binding />
                 </options>
             </control>
             <control>
@@ -353,10 +386,13 @@
                 <status>0x90</status>
                 <midino>0x62</midino>
                 <options>
-                    <script-binding/>
+                    <script-binding />
                 </options>
             </control>
+
+            <!-- /////////////////////////// -->
+
         </controls>
-        <outputs/>
+        <outputs />
     </controller>
 </MixxxControllerPreset>
