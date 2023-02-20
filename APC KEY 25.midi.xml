@@ -1,38 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
-<MixxxControllerPreset mixxxVersion="" schemaVersion="1">
+<MixxxControllerPreset schemaVersion="1" mixxxVersion="">
     <info>
         <name>APC KEY 25</name>
     </info>
     <controller id="apckey25">
         <scriptfiles>
-            <!-- <file filename="apckey25-model-scripts.js" functionprefix="Apckey25"/> -->
-
-            <!-- <file filename="lodash.mixxx.js"/> -->
-            <!-- <file filename="midi-components-0.0.js"/> -->
-            <file functionprefix="ApcKey25" filename="apckey25-componentjs-script.js"/>
-
+            <file filename="apckey25-componentjs-script.js" functionprefix="ApcKey25"/>
         </scriptfiles>
         <controls>
-            <control>
-                <group>[Channel1]</group>
-                <key>ApcKey25.Shift</key>
-                <status>0x90</status>
-                <midino>0x62</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-
-            <control>
-                <group>[Channel1]</group>
-                <key>ApcKey25.Shift</key>
-                <status>0x80</status>
-                <midino>0x62</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-
             <control>
                 <group>[Channel1]</group>
                 <key>LoadSelectedTrack</key>
@@ -40,30 +15,25 @@
                 <status>0x90</status>
                 <midino>0x00</midino>
                 <options>
-                    <normal/> 
+                    <normal/>
                 </options>
             </control>
-            <control> 
+            <control>
                 <group>[Channel1]</group>
-                <!-- <key>play</key> -->
                 <key>ApcKey25.Play</key>
                 <description>MIDI Learned from 2 messages.</description>
                 <status>0x90</status>
                 <midino>0x01</midino>
                 <options>
-                    <!-- <normal/> -->
                     <script-binding/>
                 </options>
             </control>
             <control>
-                <group>[Channel1]</group>
-                <!-- <key>sync_enabled</key> -->
-                <key>ApcKey25.test</key>
-                <description>MIDI Learned from 2 messages.</description>
+                <group></group>
+                <key>ApcKey25.changeActiveDeck</key>
                 <status>0x90</status>
-                <midino>0x03</midino>
+                <midino>0x02</midino>
                 <options>
-                    <!-- <normal/> -->
                     <script-binding/>
                 </options>
             </control>
@@ -85,6 +55,15 @@
                 <midino>0x05</midino>
                 <options>
                     <normal/>
+                </options>
+            </control>
+            <control>
+                <group></group>
+                <key>ApcKey25.changeActiveDeck</key>
+                <status>0x90</status>
+                <midino>0x06</midino>
+                <options>
+                    <script-binding/>
                 </options>
             </control>
             <control>
@@ -217,86 +196,88 @@
                     <normal/>
                 </options>
             </control>
+
+
+
+
             <control>
-                <group>[QuickEffectRack1_[Channel1]]</group>
-                <key>super1</key>
-                <description>MIDI Learned from 386 messages.</description>
+                <group>[Knobs]</group>
+                <key>ApcKey25.knob</key>
                 <status>0xB0</status>
                 <midino>0x30</midino>
                 <options>
-                    <normal/>
+                    <script-binding/>
                 </options>
             </control>
             <control>
-                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
-                <key>parameter3</key>
-                <description>MIDI Learned from 314 messages.</description>
+                <group>[Knobs]</group>
+                <key>ApcKey25.knob</key>
                 <status>0xB0</status>
                 <midino>0x31</midino>
                 <options>
-                    <normal/>
+                    <script-binding/>
                 </options>
             </control>
             <control>
-                <group>[QuickEffectRack1_[Channel2]]</group>
-                <key>super1</key>
-                <description>MIDI Learned from 319 messages.</description>
+                <group>[Knobs]</group>
+                <key>ApcKey25.knob</key>
                 <status>0xB0</status>
                 <midino>0x32</midino>
                 <options>
-                    <normal/>
+                    <script-binding/>
                 </options>
             </control>
             <control>
-                <group>[EqualizerRack1_[Channel2]_Effect1]</group>
-                <key>parameter3</key>
-                <description>MIDI Learned from 294 messages.</description>
+                <group>[Knobs]</group>
+                <key>ApcKey25.knob</key>
                 <status>0xB0</status>
                 <midino>0x33</midino>
                 <options>
-                    <normal/>
+                    <script-binding/>
                 </options>
             </control>
             <control>
-                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
-                <key>parameter1</key>
-                <description>MIDI Learned from 376 messages.</description>
+                <group>[QuickEffectRack1_[Channel1]]</group>
+                <key>ApcKey25.filterKnob</key>
                 <status>0xB0</status>
                 <midino>0x34</midino>
                 <options>
-                    <normal/>
+                    <script-binding/>
                 </options>
             </control>
             <control>
-                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
-                <key>parameter2</key>
-                <description>MIDI Learned from 294 messages.</description>
+                <group>[Knobs]</group>
+                <key>ApcKey25.filterKnob</key>
                 <status>0xB0</status>
                 <midino>0x35</midino>
                 <options>
-                    <normal/>
+                    <script-binding/>
                 </options>
             </control>
             <control>
-                <group>[EqualizerRack1_[Channel2]_Effect1]</group>
-                <key>parameter1</key>
-                <description>MIDI Learned from 384 messages.</description>
+                <group>[Knobs]</group>
+                <key>ApcKey25.filterKnob</key>
                 <status>0xB0</status>
                 <midino>0x36</midino>
                 <options>
-                    <normal/>
+                    <script-binding/>
                 </options>
             </control>
             <control>
-                <group>[EqualizerRack1_[Channel2]_Effect1]</group>
-                <key>parameter2</key>
-                <description>MIDI Learned from 355 messages.</description>
+                <group>[Knobs]</group>
+                <key>ApcKey25.filterKnob</key>
                 <status>0xB0</status>
                 <midino>0x37</midino>
                 <options>
-                    <normal/>
+                    <script-binding/>
                 </options>
             </control>
+
+
+
+
+
+
             <control>
                 <group>[Library]</group>
                 <key>MoveUp</key>
@@ -355,6 +336,24 @@
                 <midino>0x48</midino>
                 <options>
                     <normal/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>ApcKey25.Shift</key>
+                <status>0x80</status>
+                <midino>0x62</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>ApcKey25.Shift</key>
+                <status>0x90</status>
+                <midino>0x62</midino>
+                <options>
+                    <script-binding/>
                 </options>
             </control>
         </controls>
