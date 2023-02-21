@@ -11,7 +11,7 @@
 
 
             <!-- /////////////////////////// -->
-            <!-- /// A , LOAD, PLAY, SYNC //// -->
+            <!-- /// DECK 1 , LOAD, PLAY, SYNC //// -->
 
             <control>
                 <group></group>
@@ -47,17 +47,41 @@
 
             <control>
                 <group>[Channel1]</group>
-                <key>sync_enabled</key>
+                <key>ApcKey25.syncEnabled</key>
                 <description>MIDI Learned from 2 messages.</description>
                 <status>0x90</status>
                 <midino>0x03</midino>
                 <options>
-                    <normal />
+                    <script-binding />
+                </options>
+            </control>
+
+            <!-- /// DECK 1 , RATE-PERM-UP, RATE-PERM-DOWN  //// -->
+
+            <control>
+                <group>[Channel1]</group>
+                <key>ApcKey25.ratePermDown</key>
+                <description>MIDI Learned from 2 messages.</description>
+                <status>0x90</status>
+                <midino>0x13</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+
+            <control>
+                <group>[Channel1]</group>
+                <key>ApcKey25.ratePermUp</key>
+                <description>MIDI Learned from 2 messages.</description>
+                <status>0x90</status>
+                <midino>0x0B</midino>
+                <options>
+                    <script-binding />
                 </options>
             </control>
 
             <!-- /////////////////////////// -->
-            <!-- /// b , LOAD, PLAY, SYNC //// -->
+            <!-- /// DECK 2 , LOAD, PLAY, SYNC //// -->
 
             <control>
                 <group></group>
@@ -93,58 +117,43 @@
 
             <control>
                 <group>[Channel2]</group>
-                <key>sync_enabled</key>
+                <key>ApcKey25.syncEnabled</key>
                 <description>MIDI Learned from 2 messages.</description>
                 <status>0x90</status>
                 <midino>0x07</midino>
                 <options>
-                    <normal />
+                    <script-binding />
+                </options>
+            </control>
+
+            <!-- /// DECK 2 , RATE-PERM-UP, RATE-PERM-DOWN  //// -->
+
+            <control>
+                <group>[Channel2]</group>
+                <key>ApcKey25.ratePermDown</key>
+                <description>MIDI Learned from 2 messages.</description>
+                <status>0x90</status>
+                <midino>0x17</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+
+            <control>
+                <group>[Channel2]</group>
+                <key>ApcKey25.ratePermUp</key>
+                <description>MIDI Learned from 2 messages.</description>
+                <status>0x90</status>
+                <midino>0x0F</midino>
+                <options>
+                    <script-binding />
                 </options>
             </control>
 
 
             <!-- /////////////////////////// -->
+            <!-- ////// LOOP & MOVE -> DECK 1 //// -->
 
-            <control>
-                <group>[Channel1]</group>
-                <key>loop_double</key>
-                <description>MIDI Learned from 4 messages.</description>
-                <status>0x90</status>
-                <midino>0x1A</midino>
-                <options>
-                    <normal />
-                </options>
-            </control>
-            <control>
-                <group>[Channel1]</group>
-                <key>loop_halve</key>
-                <description>MIDI Learned from 2 messages.</description>
-                <status>0x90</status>
-                <midino>0x1B</midino>
-                <options>
-                    <normal />
-                </options>
-            </control>
-            <control>
-                <group>[Channel2]</group>
-                <key>loop_double</key>
-                <description>MIDI Learned from 2 messages.</description>
-                <status>0x90</status>
-                <midino>0x1E</midino>
-                <options>
-                    <normal />
-                </options>
-            </control>
-            <control>
-                <group>[Channel2]</group>
-                <key>loop_halve</key>
-                <description>MIDI Learned from 2 messages.</description>
-                <status>0x90</status>
-                <midino>0x1F</midino>
-                <options>
-                    <normal />
-                </options>
-            </control>
             <control>
                 <group>[Channel1]</group>
                 <key>beatloop_activate</key>
@@ -185,6 +194,34 @@
                     <normal />
                 </options>
             </control>
+
+            <!-- /////////////////////////// -->
+
+            <control>
+                <group>[Channel1]</group>
+                <key>ApcKey25.changeBeatLoopSize</key>
+                <description>MIDI Learned from 4 messages.</description>
+                <status>0x90</status>
+                <midino>0x18</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+
+            <control>
+                <group>[Channel1]</group>
+                <key>ApcKey25.changeBeatJumpSize</key>
+                <description>MIDI Learned from 4 messages.</description>
+                <status>0x90</status>
+                <midino>0x1A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+
+            <!-- /////////////////////////// -->
+            <!-- ////// LOOP & MOVE -> DECK 2 //// -->
+
             <control>
                 <group>[Channel2]</group>
                 <key>beatloop_activate</key>
@@ -226,6 +263,29 @@
                 </options>
             </control>
 
+            <!-- /////////////////////////// -->
+
+            <control>
+                <group>[Channel2]</group>
+                <key>ApcKey25.changeBeatLoopSize</key>
+                <description>MIDI Learned from 4 messages.</description>
+                <status>0x90</status>
+                <midino>0x1C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+
+            <control>
+                <group>[Channel2]</group>
+                <key>ApcKey25.changeBeatJumpSize</key>
+                <description>MIDI Learned from 2 messages.</description>
+                <status>0x90</status>
+                <midino>0x1E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
 
             <!-- /////////////////////////// -->
             <!-- /// 8 KNOBS - VOL, EQ, FILTER, EFFECTS //// -->

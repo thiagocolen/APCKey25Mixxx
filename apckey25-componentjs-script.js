@@ -10,6 +10,10 @@ ApcKey25.init = function (id, debugging) {
     print("----->>> id:" + id + " debugging:" + debugging);
 
     ApcKey25.initSoftTakeover();
+    ApcKey25.initEffectsOn();
+    ApcKey25.changeActiveDeck();
+    ApcKey25.changeActiveDeck();
+    ApcKey25.initKeylockOn();
 };
 
 ApcKey25.shutdown = function () {
@@ -56,6 +60,23 @@ ApcKey25.initSoftTakeoverIgnore = function () {
             KNOBS_TO_CONTROL[i].control
         );
     }
+};
+
+ApcKey25.initEffectsOn = function () {
+    for (var i = 1; i <= 2; i++) {
+        for (var j = 1; j <= 3; j++) {
+            engine.setParameter(
+                "[EffectRack1_EffectUnit" + i + "_Effect" + j + "]",
+                "enabled",
+                1
+            );
+        }
+    }
+};
+
+ApcKey25.initKeylockOn = function () {
+    engine.setParameter("[Channel1]", "keylock", 1);
+    engine.setParameter("[Channel2]", "keylock", 1);
 };
 
 // -------------------------------------------------------------------------------
@@ -316,3 +337,86 @@ ApcKey25.filterKnob = function (channel, control, value, status, group) {
 // -------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------
+
+ApcKey25.beatjump_size = {
+    name: "beatjump_size",
+    sizes: [8, 16, 32, 64],
+    selectedSize: 0,
+};
+ApcKey25.changeBeatJumpSize = function (
+    channel,
+    control,
+    value,
+    status,
+    group
+) {
+    ApcKey25.printParameters(channel, control, value, status, group);
+
+    if (ApcKey25.beatjump_size.selectedSize === 3) {
+        ApcKey25.beatjump_size.selectedSize = 0;
+    } else {
+        ApcKey25.beatjump_size.selectedSize++;
+    }
+
+    engine.setParameter(
+        group,
+        "beatjump_size",
+        ApcKey25.beatjump_size.sizes[ApcKey25.beatjump_size.selectedSize]
+    );
+};
+
+// -------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------
+
+ApcKey25.beatloop_size = {
+    name: "beatloop_size",
+    sizes: [8, 16, 32, 64],
+    selectedSize: 0,
+};
+
+ApcKey25.changeBeatLoopSize = function (
+    channel,
+    control,
+    value,
+    status,
+    group
+) {
+    ApcKey25.printParameters(channel, control, value, status, group);
+
+    if (ApcKey25.beatloop_size.selectedSize === 3) {
+        ApcKey25.beatloop_size.selectedSize = 0;
+    } else {
+        ApcKey25.beatloop_size.selectedSize++;
+    }
+
+    engine.setParameter(
+        group,
+        "beatloop_size",
+        ApcKey25.beatloop_size.sizes[ApcKey25.beatloop_size.selectedSize]
+    );
+};
+
+// -------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------
+
+ApcKey25.syncEnabled = function (channel, control, value, status, group) {
+    ApcKey25.printParameters(channel, control, value, status, group);
+    engine.setParameter(group, "sync_enabled", 1);
+};
+
+ApcKey25.ratePermUp = function (channel, control, value, status, group) {
+    ApcKey25.printParameters(channel, control, value, status, group);
+    engine.setParameter(group, "rate_perm_up", 1);
+};
+
+ApcKey25.ratePermDown = function (channel, control, value, status, group) {
+    ApcKey25.printParameters(channel, control, value, status, group);
+    engine.setParameter(group, "rate_perm_down", 1);
+};
+
+// -------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------
+
